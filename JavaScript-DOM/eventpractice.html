@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="fg" onclick= "alert('grandparent')">
+        <div class="jk"  onclick= "alert('Parent clicked')">
+            <img id="11" src="image4.jpeg" alt="Image 4" style="width: 200px;"  >
+        </div>
+    </div>
+</body>
+
+<script>
+    // document.getElementById('11').onclick = function(){
+
+    //     alert('we are clicked 11')
+    // }
+
+    document.getElementById('11').addEventListener("click" , function(e){
+        alert('we are clicked 1111111')
+        console.log(e);
+        
+    }, true)
+
+</script>
+</html>

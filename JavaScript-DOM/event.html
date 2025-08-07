@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Click Actions</title>
+</head>
+<body>
+    <div id="1111" onclick="alert('You clicked parent Grandparent div')" >
+    
+    <div id="111" onclick="alert('You clicked parent div')" >
+    
+                    <h1>Click on Images:</h1>
+    
+                    <!-- Image 1 - Alert on click -->
+                    <img src="image1.jpeg" alt="Image 1" style="width: 200px;" onclick="alert('You clicked Image 1!')">
+
+                    <!-- Image 2 - Go to a link on click -->
+                    <a id="13" href="https://www.google.com">
+                        <img src="image2.jpeg" alt="Image 2" style="width: 200px;">
+                    </a>
+
+                    <!-- Image 3 - Remove on click -->
+                    <img id="12" src="image3.jpeg" alt="Image 3" style="width: 200px;" >
+
+                    <!-- Image 4 - Change source on click -->
+                    <img id="11" src="image4.jpeg" alt="Image 4" style="width: 200px;" >
+
+    </div>
+
+    </div>
+
+    <script>
+
+        document.getElementById("11").onclick = function(){
+            alert("image4 now clicked")
+        }
+
+        document.getElementById("12").addEventListener("click" , function(e){
+            alert("image 3 clicked");
+            console.log(e);
+            // e.stopPropagation();
+        }, true)
+
+        document.getElementById("13").addEventListener("click", function(e){
+            // e.stopPropagation();
+            e.preventDefault();
+        })
+
+        // Function to remove an image on click
+        function removeImage(imgElement) {
+            imgElement.style.display = "none";
+        }
+
+        // Function to change the source of an image on click
+        function changeImageSource(imgElement) {
+            imgElement.src = "newImage.jpg";
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <!-- <script src="1.js"></script> -->
+</head>
+<body>
+    <h1>should i be on the first place</h1>
+
+    <ul class="months">
+        <li class="list">Jan</li>
+        <li class="list">Feb</li>
+        <li class="list">March</li>
+        <li class="list">April</li>
+    </ul>
+
+   
+</body>
+
+<script>
+
+    function A(month)
+
+   {
+    const newDiv = document.createElement("div");
+    console.log(newDiv);
+
+    newDiv.innerHTML = `${month}`;
+    console.log(newDiv);
+
+    document.body.appendChild(newDiv);
+    
+    // Select the <h1> element
+    const h1Element = document.querySelector("h1");
+
+    // Remove the <h1> element if it exists
+    if (h1Element) {
+        document.body.removeChild(h1Element);
+    }}
+
+    A("may");
+
+</script>
+</html>

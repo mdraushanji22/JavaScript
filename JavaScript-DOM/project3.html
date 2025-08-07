@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Addition Calculator</title>
+</head>
+<body>
+    <h1>Number Addition</h1>
+    <input type="number" id="num1" placeholder="Enter a number">
+    <input type="number" id="num2" placeholder="Enter another number">
+    <button id="addButton">Add</button>
+    <br>
+    <label>Result:</label>
+    <input type="text" id="result" readonly>
+
+    <script>
+        // Get references to the input fields and the result field
+        const num1Input = document.getElementById("num1");
+        const num2Input = document.getElementById("num2");
+        const resultInput = document.getElementById("result");
+        const addButton = document.getElementById("addButton");
+
+        // Add click event listener to the "Add" button
+        addButton.addEventListener("click", function () {
+            // Parse the input values as numbers
+            const num1 = parseFloat(num1Input.value);
+            const num2 = parseFloat(num2Input.value);
+
+            // Check if the input values are valid numbers
+            if (!isNaN(num1) && !isNaN(num2)) {
+                // Perform the addition
+                const sum = num1 + num2;
+
+                // Display the result in the result input field
+                resultInput.value = sum;
+            } else {
+                // Handle invalid input
+                resultInput.value = "Invalid input";
+            }
+        });
+    </script>
+</body>
+</html>
+
